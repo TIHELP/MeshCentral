@@ -1,0 +1,40 @@
+{
+  "settings": {
+    "mongoDb": "mongodb://mongodb:27017/meshcentral",
+    "mongoDbName": "meshcentral",
+    "mongoDbBackup": false,
+    "cert": "remoto.helpmultas.com",
+    "port": 444,
+    "aliasPort": 443,
+    "redirPort": 0,
+    "TlsOffload": true,
+    "TrustProxy": true,
+    "agentPort": 444,
+    "agentAliasPort": 443,
+    "sessionKey": "9VRI02rnwX3PX6",
+    "allowLogin": true,
+    "allowNewAccounts": false,
+    "selfUpdate": false
+  },
+  "domains": {
+    "": {
+      "title": "Help Multas",
+      "title2": "REMOTO",
+      "certUrl": "https://remoto.helpmultas.com",
+      "authStrategies": {
+        "localauth": true,
+        "google": {
+          "clientID": "${GOOGLE_CLIENT_ID}",
+          "clientSecret": "${GOOGLE_CLIENT_SECRET}",
+          "callbackURL": "https://remoto.helpmultas.com/auth-google-callback",
+          "newAccounts": true
+        }
+      },
+      "sessionRecording": {
+        "enabled": true,
+        "protocols": [1, 2],
+        "index": true
+      }
+    }
+  }
+}
