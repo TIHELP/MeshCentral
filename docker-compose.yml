@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:6.0
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+
+  meshcentral:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: meshcentral
+    depends_on:
+      - mongodb
+    ports:
+      - "444:444"
+      - "4433:4433"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/meshcentral
+      - NODE_ENV=production
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    volumes:
+      - ./meshcentral-data:/opt/meshcentral/meshcentral-data
+      - ./meshcentral-userfiles:/opt/meshcentral/meshcentral-userfiles
+      - ./meshcentral-recordings:/opt/meshcentral/meshcentral-recordings
+
+volumes:
+  mongo_data:
