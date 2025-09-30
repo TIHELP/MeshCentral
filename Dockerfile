@@ -6,7 +6,7 @@ ARG DISABLE_TRANSLATE="yes"
 
 RUN mkdir -p /opt/meshcentral/meshcentral
 WORKDIR /opt/meshcentral
-COPY ./meshcentral /opt/meshcentral/meshcentral/
+COPY ./ /opt/meshcentral/meshcentral/
 
 RUN apk add --no-cache python3 make g++ bash
 RUN if [ -n "$DISABLE_MINIFY" ] || [ -n "$DISABLE_TRANSLATE" ]; then \
