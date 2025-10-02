@@ -168,7 +168,7 @@ RUN cd meshcentral && \
     npm cache clean --force && \
     rm -rf /root/ /tmp/
 
-EXPOSE 80 443
+EXPOSE 4433
 
 VOLUME /opt/meshcentral/meshcentral-data
 VOLUME /opt/meshcentral/meshcentral-files
