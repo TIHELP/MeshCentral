@@ -4,13 +4,17 @@
     "mongoDbName": "meshcentral",
     "mongoDbBackup": false,
     "cert": "remoto.helpmultas.com",
-    "port": 444,
+
+    "port": 4433,
     "aliasPort": 443,
-    "redirPort": 0,
+    "redirPort": 80,
+
     "TlsOffload": true,
     "TrustProxy": true,
-    "agentPort": 444,
+
+    "agentPort": 4433,
     "agentAliasPort": 443,
+
     "sessionKey": "9VRI02rnwX3PX6",
     "allowLogin": true,
     "allowNewAccounts": false,
