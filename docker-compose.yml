@@ -8,15 +8,12 @@ services:
       - mongo_data:/data/db
 
   meshcentral:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile
+    image: ghcr.io/ylianst/meshcentral:latest
     container_name: meshcentral
     depends_on:
       - mongodb
     ports:
-      - "444:444"
-      - "4433:4433"
+      - "4433:4433"   # HTTPS interno MeshCentral
     environment:
       - MONGO_URL=mongodb://mongodb:27017/meshcentral
       - NODE_ENV=production
