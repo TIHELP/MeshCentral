@@ -5,14 +5,14 @@
     "mongoDbBackup": false,
     "cert": "remoto.helpmultas.com",
 
-    "port": 4433,
+    "port": 443,
     "aliasPort": 443,
     "redirPort": 80,
 
     "TlsOffload": true,
     "TrustProxy": true,
 
-    "agentPort": 4433,
+    "agentPort": 443,
     "agentAliasPort": 443,
 
     "sessionKey": "9VRI02rnwX3PX6",
